@@ -140,7 +140,7 @@ def find_ioctls():
     max = inf_get_max_ea()
     print "[+] Searching for IOCTLS found by IDA..."
     while cur < max:
-        cur = find_text(cur, SEARCH_DOWN, 0, 0, "IoControlCode")
+        cur = ida_search.find_text(cur, 0, 0, "IoControlCode", ida_search.SEARCH_DOWN)
         if cur == BADADDR:
             break
         else:
