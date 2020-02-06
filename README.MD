@@ -3,7 +3,7 @@
 ## Quickstart
 
 ### DriverBuddy Installation Instructions
-1. Copy DriverBuddy folder and DriverBuddy.py file into the IDA plugins folder C:\Program Files (x86)\IDA 6.8\plugins or wherever you installed IDA
+1. Copy DriverBuddy folder and DriverBuddy.py file into the IDA plugins folder C:\Program Files\IDA Pro 7.4\plugins or wherever you installed IDA
 
 
 ### DriverBuddy Usage Instructions 
