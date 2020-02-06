@@ -28,7 +28,7 @@ class DriverBuddyPlugin(plugin_t):
 
     def run(self, args):
         print "[+] Welcome to Driver Buddy"
-        autoWait() # Wait for IDA autoanalysis to complete
+        auto_wait() # Wait for IDA autoanalysis to complete
         driver_entry = data.is_driver()
 	if driver_entry == "":
             print "[-] No DriverEntry stub found"

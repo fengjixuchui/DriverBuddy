@@ -136,11 +136,11 @@ find_ioctls: Attempts to locate any IOCTLs in driver automatically.
 #####################################################################'''
 def find_ioctls():
     error = False
-    cur = MinEA()
-    max = MaxEA()
+    cur = inf_get_min_ea()
+    max = inf_get_max_ea()
     print "[+] Searching for IOCTLS found by IDA..."
     while cur < max:
-        cur = FindText(cur, SEARCH_DOWN, 0, 0, "IoControlCode")
+        cur = find_text(cur, SEARCH_DOWN, 0, 0, "IoControlCode")
         if cur == BADADDR:
             break
         else:

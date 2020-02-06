@@ -7,7 +7,7 @@ from idaapi import *
 from idc import *
 
 # Architecture dependent globals
-FF_PTR = FF_QWRD # FF_DWRD
+FF_PTR = FF_QOWRD # FF_DWRD
 get_ptr = get_64bit # get_32bit
 ptr_size = 8 # 4
 
