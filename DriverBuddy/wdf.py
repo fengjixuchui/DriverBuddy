@@ -10,6 +10,7 @@ from idc import *
 FF_PTR = FF_QOWRD # FF_DWRD
 get_ptr = get_64bit # get_32bit
 ptr_size = 8 # 4
+SEARCH_UNICODE = 0x40 
 
 def log(string):
 	print '[+]: ' + string
@@ -474,11 +475,11 @@ def add_struct(version):
 
 def populate_wdf():
 	# find data sections
-	segment_starts = [get_segm_by_name('.data').startEA, get_segm_by_name('.rdata').startEA]
+	segment_starts = [get_segm_by_name('.data').start_ea, get_segm_by_name('.rdata').start_ea]
 	for ea in segment_starts:
 		if ea != BADADDR:
 			# find "KmdfLibrary" unicode string in .rdata section
-			idx = find_binary(ea, BADADDR, '"KmdfLibrary"', 0, SEARCH_UNICODE)
+			idx = ida_search.find_binary(ea, BADADDR, '"KmdfLibrary"', 0, SEARCH_UNICODE)
 			if idx != BADADDR:
 				log('Found "KmdfLibrary" unicode string at ' + hex(idx))
 				addr = get_first_dref_to(idx)

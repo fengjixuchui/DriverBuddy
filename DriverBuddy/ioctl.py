@@ -144,15 +144,15 @@ def find_ioctls():
         if cur == BADADDR:
             break
         else:
-            if GetOpType(cur, 0) == 5:
-                OpDecimal(cur, 0)
-                get_ioctl_code(int(GetOpnd(cur,0)))
+            if get_operand_type(cur, 0) == 5:
+                op_dec(cur, 0)
+                get_ioctl_code(int(print_operand(cur,0)))
                 error = True
-            elif GetOpType(cur, 1) == 5:
-                OpDecimal(cur, 1)
-                get_ioctl_code(int(GetOpnd(cur,1)))
+            elif get_operand_type(cur, 1) == 5:
+                op_dec(cur, 1)
+                get_ioctl_code(int(print_operand(cur,1)))
                 error = True
             else:
                 print "[-] Couldn't get IOCTL from %s at address %s " % (GetDisasm(cur), hex(cur))
-        cur = NextHead(cur)
+        cur = next_head(cur)
     return error
