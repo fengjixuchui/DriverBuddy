@@ -1,5 +1,4 @@
-# Fork: Ported to IDA Pro 7.4
-
+#### DriverBuddy is an IDA Python script to assist with the reverse engineering of Windows kernel drivers.
 ## Quickstart
 
 ### DriverBuddy Installation Instructions
